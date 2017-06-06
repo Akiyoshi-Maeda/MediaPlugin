@@ -94,6 +94,11 @@ namespace Plugin.Media
                 CompressionQuality = options?.CompressionQuality ?? 100
             };
 
+            if (options.MaxWidthHeight != null)
+            {
+                cameraOptions.MaxWidthHeight = options.MaxWidthHeight;
+            }
+
             return GetMediaAsync(UIImagePickerControllerSourceType.PhotoLibrary, TypeImage, cameraOptions);
         }
  
